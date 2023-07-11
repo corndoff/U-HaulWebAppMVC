@@ -1,0 +1,50 @@
+﻿@model IEnumerable<U_HaulWebAppMVC.Models.User>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Users</h1>
+
+</div>
+    </br>
+    </br>
+    
+    <div class="float">
+            <a asp-area="" asp-controller="Home" asp-action="Index">All Users</a>
+            </br>
+            </br>
+            <a asp-area="" asp-controller="Home" asp-action="Index" asp-route-active="true">Active Users</a>
+    </div>
+    <div class="two">
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FirstName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LastName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.UniqueLoginName)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UniqueLoginName)
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+    </div>
